@@ -1,6 +1,6 @@
 # Setup
 
-This repo implements our framework on SST-2. Please see the example commands below for details.
+This repo implements the framework in [this paper](https://arxiv.org/abs/2305.13865) on SST-2. Please see the example commands below for details.
 The code requires GPUs that support half-precision training. Please first install the following python packages.
 ```
 torch==1.12.1
