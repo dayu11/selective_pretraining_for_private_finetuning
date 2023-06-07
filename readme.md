@@ -13,7 +13,7 @@ tqdm
 
 ## The first stage: selective pre-training.
 
-1. First download Wikipedia and BookCorpus and split the documents into natural sentences. The resulting dataset is saved at `data/flatten_wiki_book_sentences.ds`.
+1. Run the following command to download Wikipedia + BookCorpus, and split the documents into natural sentences. The resulting dataset is saved at `data/flatten_wiki_book_sentences.ds`.
 
 ```
 cd pretraining_data_selection
