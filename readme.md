@@ -10,6 +10,12 @@ accelerate
 tqdm
 ```
 
+## Implementation of DP fine-tuning
+
+The transformers package in `dp_finetuning` enables DP training. 
+We register Pytorch backward hooks to linear layers to enable per-example gradient computation.
+
+The implementation of hooks is in `src/transformers/models/grad_sample_utils.py`. The hooks are attached to the model in `src/transformers/models/gpt2.py`
 
 ## The first stage: selective pre-training.
 
@@ -80,9 +86,6 @@ bash scripts/pretraining.sh pretraining_data_random_40m.ds tiny 3e-4 1000000 32 
 ```
 
 ## Finally, the second stage: private fine-tuning.
-
-### The hooks that are used for per-example gradient computation are in src/transformers/models/grad_sample_utils.py
-### The hooks are attached to the model in src/transformers/models/gpt2.py
 
 6. Private fine-tuning on sst-2. Don't forget installing dp enabled transformers package.
 
